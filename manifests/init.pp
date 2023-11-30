@@ -9,6 +9,9 @@
 # @param config_file
 #   The path to the f-upgrade configuration file.
 #
+# @param cronjob_options
+#   Options for the f-upgrade cron job.
+#
 # @param hook_dir
 #   The target directory for hook files.
 #
@@ -16,6 +19,10 @@
 #   A list of hooks. The content may be specified either directly using
 #   the "content" parameter or by specifying the "source" parameter – as
 #   supported by the file resource.
+#
+# @param manage_cronjob
+#   Enables the f-upgrade cron job. By default it runs hourly to start or
+#   resume the upgrade process.
 #
 # @param package_ensure
 #   The desired state for the f-upgrade package.
@@ -30,9 +37,11 @@
 #
 class f_upgrade (
   Hash $config,
+  Hash $cronjob_options,
   Stdlib::Absolutepath $config_file,
   Stdlib::Absolutepath $hook_dir,
   Hash $hooks,
+  Boolean $manage_cronjob,
   Enum['absent', 'installed', 'latest'] $package_ensure,
   String $package_name,
   Optional[String] $upgrade = undef,

@@ -42,6 +42,12 @@ Data type: `Stdlib::Absolutepath`
 
 The path to the f-upgrade configuration file.
 
+##### `cronjob_options`
+
+Data type: `Hash`
+
+Options for the f-upgrade cron job.
+
 ##### `hook_dir`
 
 Data type: `Stdlib::Absolutepath`
@@ -55,6 +61,13 @@ Data type: `Hash`
 A list of hooks. The content may be specified either directly using
 the "content" parameter or by specifying the "source" parameter – as
 supported by the file resource.
+
+##### `manage_cronjob`
+
+Data type: `Boolean`
+
+Enables the f-upgrade cron job. By default it runs hourly to start or
+resume the upgrade process.
 
 ##### `package_ensure`
 

@@ -20,7 +20,7 @@ class f_upgrade::config {
     if (($value =~ Undef) or ($value == '')) {
       # When no $value is set, remove the option from
       # the configuration files.
-      file_line { "remove f-upgrade option ${option}":
+      file_line { "remove f-upgrade option: ${option}":
         ensure            => 'absent',
         path              => $f_upgrade::config_file,
         match             => "^${option}=",
@@ -28,13 +28,20 @@ class f_upgrade::config {
         multiple          => true,
       }
     } else {
-      file_line { "set f-upgrade option ${option}":
+      file_line { "set f-upgrade option: ${option}":
         ensure             => 'present',
         path               => $f_upgrade::config_file,
         line               => "${option}=\'${$value}\'",
         match              => "^${option}=",
         append_on_no_match => true,
       }
+    }
+  }
+
+  # Setup cronjob.
+  if $f_upgrade::manage_cronjob {
+    cron { 'Run f-upgrade':
+      * => $cronjob_options,
     }
   }
 }
