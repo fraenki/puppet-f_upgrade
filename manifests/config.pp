@@ -2,7 +2,21 @@
 #
 # @api private
 class f_upgrade::config {
-  $f_upgrade::config.each | String $option, Variant[String, Integer] $value| {
+  # The 'upgrade' option must not be specified in $config.
+  if ('upgrade' in $f_upgrade::config) {
+    fail('f-upgrade $config parameter is invalid, it MUST NOT include the upgrade option')
+  }
+
+  # Now merge the 'upgrade' parameter into $config.
+  if ($f_upgrade::upgrade != '') {
+    $_config = deep_merge($f_upgrade::config, { 'upgrade' => $f_upgrade::upgrade })
+  } else {
+    # Set to an empty string, which will cause it to be removed
+    # from the config file.
+    $_config = deep_merge($f_upgrade::config, { 'upgrade' => '' })
+  }
+
+  $_config.each | String $option, Variant[String, Integer] $value| {
     if ($value != '') {
       file_line { "set f-upgrade option ${option}":
         ensure             => 'present',

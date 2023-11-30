@@ -50,7 +50,7 @@ class { 'f_upgrade':
 
 ### Using hooks
 
-Hooks make it possible to customize the upgrade process. They need to have a valid shell syntax. Hooks may either be specified directly using the `content` parameter or by specifying an alternative download source using the `source` parameter:
+Hooks make it possible to customize the upgrade process. They need to have valid POSIX shell syntax. Hooks may either be specified directly using the `content` parameter or by specifying an alternative download source using the `source` parameter:
 
 ```puppet
 class { 'f_upgrade':
