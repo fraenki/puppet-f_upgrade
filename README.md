@@ -54,7 +54,7 @@ Hooks make it possible to customize the upgrade process. They need to have valid
 
 ```puppet
 class { 'f_upgrade':
-  hook => {
+  hooks => {
     '1000.pre' => {
       content => "echo hello world\n exit 0",
     },
