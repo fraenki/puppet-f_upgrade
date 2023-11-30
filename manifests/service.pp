@@ -3,15 +3,15 @@
 # @api private
 class f_upgrade::service {
   # Only start the f-upgrade "service" if an upgrade is configured.
-  if f_upgrade =~ String {
+  if ($f_upgrade::upgrade =~ String and $f_upgrade::upgrade != '') {
     $service_ensure = 'running'
   } else {
-    # The "stop" command is not available, hence this does nothing.
+    # f-upgrade does not provide a "stop" command, hence this does nothing.
     $service_ensure = 'stopped'
   }
 
-  # f-upgrade does not provide a real service, instead the "start"
-  # command initiates the upgrade process (if an upgrade is configured).
+  # f-upgrade is not a real service, instead the "start" command
+  # initiates the upgrade process (if a valid upgrade is configured).
   service { 'f_upgrade':
     ensure     => $service_ensure,
     enable     => true,
