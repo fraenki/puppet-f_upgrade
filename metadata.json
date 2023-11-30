@@ -1,0 +1,42 @@
+{
+  "name": "fraenki-f_upgrade",
+  "version": "1.0.0",
+  "author": "Frank Wall",
+  "summary": "Unattended FreeBSD operating system updates",
+  "license": "BSD-2-Clause",
+  "source": "https://github.com/fraenki/puppet-f_upgrade",
+  "project_page": "https://github.com/fraenki/puppet-f_upgrade",
+  "issues_url": "https://github.com/fraenki/puppet-f_upgrade/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.25.0 < 10.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "FreeBSD",
+      "operatingsystemrelease": [
+        "13",
+        "14"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 7.24 < 9.0.0"
+    }
+  ],
+  "tags": [
+    "bsd",
+    "f-upgrade",
+    "f_upgrade",
+    "fupgrade",
+    "freebsd-update",
+    "freebsd"
+  ],
+  "pdk-version": "3.0.0",
+  "template-url": "pdk-default#3.0.0",
+  "template-ref": "tags/3.0.0-0-g056e50d"
+}
