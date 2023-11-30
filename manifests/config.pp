@@ -41,7 +41,7 @@ class f_upgrade::config {
   # Setup cronjob.
   if $f_upgrade::manage_cronjob {
     cron { 'Run f-upgrade':
-      * => $cronjob_options,
+      * => $f_upgrade::cronjob_options,
     }
   }
 }
