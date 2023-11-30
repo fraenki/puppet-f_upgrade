@@ -16,7 +16,7 @@ class f_upgrade::config {
     $_config = deep_merge($f_upgrade::config, { 'upgrade' => '' })
   }
 
-  $_config.each | String $option, Variant[String, Integer] $value| {
+  $_config.each | String $option, Variant[String, Integer, Undef] $value| {
     if ($value != '') {
       file_line { "set f-upgrade option ${option}":
         ensure             => 'present',
