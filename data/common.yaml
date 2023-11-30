@@ -4,5 +4,5 @@ f_upgrade::config_file: '/usr/local/etc/f-upgrade.conf'
 f_upgrade::hook_dir: '/usr/local/etc/f-upgrade.hook.d'
 f_upgrade::hooks: {}
 f_upgrade::package_ensure: 'installed'
-f_upgrade::package_name: 'f_upgrade'
+f_upgrade::package_name: 'f-upgrade'
 f_upgrade::upgrade: ~
