@@ -2,7 +2,7 @@
 f_upgrade::config: {}
 f_upgrade::config_file: '/usr/local/etc/f-upgrade.conf'
 f_upgrade::cronjob_options:
-  command: '/usr/local/sbin/f-upgrade'
+  command: '/usr/local/sbin/f-upgrade -q'
   user: 'root'
   minute: '15'
 f_upgrade::hook_dir: '/usr/local/etc/f-upgrade.hook.d'
