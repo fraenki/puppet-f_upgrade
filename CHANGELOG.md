@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 * Enable quiet mode in cron job
+* Update PDK to 3.4.0
 
 ## v1.0.0 - 2023-12-01
 Initial release
