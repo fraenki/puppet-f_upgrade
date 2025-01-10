@@ -1,6 +1,6 @@
 {
   "name": "fraenki-f_upgrade",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Frank Wall",
   "summary": "Unattended FreeBSD operating system updates",
   "license": "BSD-2-Clause",
